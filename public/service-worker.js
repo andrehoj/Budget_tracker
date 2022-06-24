@@ -9,12 +9,14 @@ const FILES_TO_CACHE = [
   "./js/index.js",
   "./css/styles.css",
 ];
+
 self.addEventListener("install", function (e) {
-  //wait till the installing phase is complete
+  //dont terminate the service working untill the installing phase is complete
+  //wait untill waits for a promise
   e.waitUntil(
     //open our budget tracker cache
     caches.open(CACHE_NAME).then(function (cache) {
-      console.log("installing cache:" + CACHE_NAME);
+      console.log("installing cache: " + CACHE_NAME);
       //add all the files to the cache
       return cache.addAll(FILES_TO_CACHE);
     })
