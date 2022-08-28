@@ -1,9 +1,17 @@
+/* --main-bg-purple: #16113a,
+--Bg_2_purple: #272953,
+  --chart_1: #01D1FF,
+  --chart_2: #E5C852, */
+
 body {
   font-size: 120%;
   font-family: Arial;
+  background-color: #16113a;
+  color: #ffffff;
 }
 
-button, input {
+button,
+input {
   font-size: 100%;
   font-family: Arial;
 }
@@ -12,14 +20,33 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #16113a;
+}
+
+.bg-light {
+  background-color: #272953;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-styles {
+  padding: 5px;
+  margin-right: 5px;
+  background-color: inherit;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  border: solid 3px #16113a;
+  box-shadow: #ffffff;
 }
 
 .error {
@@ -34,12 +61,17 @@ tr:nth-child(even) {
 
 .total {
   font-size: 150%;
-  text-decoration: underline;
+  background-color: #272953;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .form {
-  margin-top: 25px;
+  margin-top: 5px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .transactions {
@@ -48,4 +80,95 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #da22ff 0%,
+    #9733ee 51%,
+    #da22ff 100%
+  );
+  margin: 10px;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+
+.btn-grad:hover {
+  cursor: pointer;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-grad-red {
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
+  margin: 10px;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+
+.btn-grad-red:hover {
+  cursor: pointer;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.table-header {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table-row {
+  background-color: inherit;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+/*  */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #16113a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #01D1FF;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #01D1FF;
 }

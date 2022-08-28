@@ -1,4 +1,3 @@
-
 let transactions = [];
 let myChart;
 
@@ -33,8 +32,8 @@ function populateTable() {
     // create and populate a table row
     let tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${transaction.name}</td>
-      <td>${transaction.value}</td>
+      <td class='table-row'>${transaction.name}</td>
+      <td class='table-row'>${transaction.value}</td>
     `;
 
     tbody.appendChild(tr);
@@ -73,13 +72,26 @@ function populateChart() {
         {
           label: "Total Over Time",
           fill: true,
-          backgroundColor: "#6666ff",
+          backgroundColor: "#01D1FF",
           data,
         },
       ],
     },
   });
 }
+
+let nameEl = document.querySelector("#t-name");
+let amountEl = document.querySelector("#t-amount");
+let errorEl = document.querySelector(".form .error");
+
+nameEl.addEventListener("focus", () => {
+  
+  errorEl.textContent = "";
+});
+
+amountEl.addEventListener("focus", () => {
+  errorEl.textContent = "";
+});
 
 function sendTransaction(isAdding) {
   let nameEl = document.querySelector("#t-name");
